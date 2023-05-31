@@ -1,0 +1,39 @@
+[packages]
+memory-profiler = "*"
+pandas = "*"
+
+[dev-packages]
+bandit = {extras = ["toml"], version = "*"}
+black = "*"
+coverage = "*"
+flake8 = "*"
+flake8-commas = "*"
+flake8-length = "*"
+flake8-quotes = "*"
+flake8-functions = "*"
+flake8-pytest-style = "*"
+isort = "*"
+mypy = "*"
+psutil = "*"
+pyproject-flake8 = "*"
+pytest = "*"
+pytest-asyncio = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+python-dotenv = "*"
+twine = "*"
+types-python-dateutil = "*"
+
+[scripts]
+clean = "python ./project/clean.py"
+format = "python ./project/format.py"
+quality = "python ./project/quality.py"
+tests = "python ./project/tests.py"
+anagrams = "python ./anagrams/bench.py"
+panq = "python ./panq/bench.py"
+asynchr = "python ./asynchr/bench.py"
+para = "python ./para/bench.py"
+oop = "python ./oop/bench.py"
+
+[pipenv]
+allow_prereleases = true
