@@ -25,6 +25,7 @@ def categorical_mean_diff(df: pd.DataFrame) -> pd.Series:
     :param df: DataFrame with columns `t` (pd.Timestamp) and `type` (object)
     :return: series with average time span for each type. Index should be sorted.
     """
-
-    # TODO: implement
-    raise NotImplementedError
+    groups = df.groupby("type")
+    return pd.Series(
+        {group_name: group_df.t.diff().mean().total_seconds() for (group_name, group_df) in groups}
+    )

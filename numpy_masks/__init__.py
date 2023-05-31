@@ -13,6 +13,6 @@ def sum_pos_even(a: np.ndarray) -> int:
     :param a: input array
     :return: sum
     """
-
-    # TODO: implement
-    raise NotImplementedError
+    flattened_arr = a.flatten()
+    filtered_arr = flattened_arr[(flattened_arr > 0) & (flattened_arr % 2 == 0)]
+    return np.sum(filtered_arr)

@@ -1,4 +1,6 @@
 import datetime
+import dataclasses
+import json
 from typing import Any
 
 import pytest
@@ -21,8 +23,8 @@ from .utils import JSONDatetimeEncoder, json_deserial_hook_datetime
 )
 def test_serial(obj: Any) -> None:
     """Verify that (de)serialization works for objects with datetime fields."""
-    serialized = ...
+    serialized = JSONDatetimeEncoder().encode(dataclasses.asdict(obj))
 
-    deserialized_obj = ...
+    deserialized_obj = ServiceRequest(**json.loads(serialized, object_pairs_hook=json_deserial_hook_datetime))
 
     assert obj == deserialized_obj
