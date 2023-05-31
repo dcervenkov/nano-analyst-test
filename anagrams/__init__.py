@@ -1,4 +1,4 @@
-from typing import Dict, List, Tuple
+from typing import List, Tuple
 
 
 def group_anagrams(strs: List[str]) -> List[List[str]]:
